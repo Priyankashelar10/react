@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
+import HeaderView from './header.view';
 
-class Dashboard extends Component {
+class HeaderContainer extends Component {
     constructor(props) {
         super(props);
     }
@@ -8,13 +9,10 @@ class Dashboard extends Component {
     render() {
         return (
             <div>
-               <h1> Dashboard </h1>
+                <HeaderView />
             </div>
         )
     }
 }
 
-Dashboard.propTypes = {
-};
-
-export default Dashboard
+export default HeaderContainer

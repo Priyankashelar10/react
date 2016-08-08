@@ -4,7 +4,7 @@ var webpack = require('webpack');
 module.exports = {
   devtool: 'cheap-module-eval-source-map',
   entry: {
-    bundle: './app.js',
+    bundle: './src/app.js',
     local: './utils/local-utils.js'
   },
   output: {
