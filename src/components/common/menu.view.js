@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import { Link } from 'react-router';
 
 const styles={
     dropDownMenu:{
@@ -34,14 +35,15 @@ class MenuView extends Component {
                                     </a>
                                     <ul className="dropdown-menu pull-left">
                                         <li className=" active">
-                                            <a href="index.html" className="nav-link  active">
-                                                <i className="icon-bar-chart"></i> Default Dashboard
+                                            <Link to="/dashboard">
+                                                <i className="icon-bar-chart"></i>Default Dashboard
                                                 <span className="badge badge-success">1</span>
-                                            </a>
+                                            </Link>
                                         </li>
                                         <li className=" ">
-                                            <a href="dashboard_2.html" className="nav-link  ">
-                                                <i className="icon-bulb"></i> Dashboard 2 </a>
+                                            <Link to="/userProfile">
+                                                <i className="icon-user"></i> User Profile
+                                            </Link>
                                         </li>
                                         <li className=" ">
                                             <a href="dashboard_3.html" className="nav-link  ">

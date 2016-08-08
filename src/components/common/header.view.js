@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import { Link } from 'react-router';
 
 const styles = {
 
@@ -335,8 +336,9 @@ class HeaderView extends Component {
                                                 <i className="icon-lock"></i> Lock Screen </a>
                                         </li>
                                         <li>
-                                            <a href="page_user_login_1.html">
-                                                <i className="icon-key"></i> Log Out </a>
+                                            <Link to="/login">
+                                                <i className="icon-key"></i> Log Out
+                                            </Link>
                                         </li>
                                     </ul>
                                 </li>
