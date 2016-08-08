@@ -1,9 +1,8 @@
 import {Route, Router, browserHistory, IndexRoute } from 'react-router';
 import React from 'react';
-import HomeContainer from './components/home.container';
 import MasterContainer from './components/master.container';
 import Login from './components/login/login.container';
-import Dashboard from './components/dashboard.container';
+import Dashboard from './components/dashboard/dashboard.container';
 
 export default(
       <Route path='/' component={MasterContainer} >

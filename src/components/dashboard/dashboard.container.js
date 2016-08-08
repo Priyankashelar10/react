@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
+import DashboardView from './dashboard.view';
 
-class Dashboard extends Component {
+class DashboardContainer extends Component {
     constructor(props) {
         super(props);
     }
@@ -8,10 +9,10 @@ class Dashboard extends Component {
     render() {
         return (
             <div>
-               <h1> Dashboard </h1>
+                <DashboardView />
             </div>
         )
     }
 }
 
-export default Dashboard
+export default DashboardContainer
