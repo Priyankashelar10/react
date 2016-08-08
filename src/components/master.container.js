@@ -10,18 +10,27 @@ class MasterContainer extends React.Component {
   render() {
     return (
       <div>
-        <div className="page-wrapper">
-          <div className="page-wrapper-row">
-            <div className="page-wrapper-top">
-              <div className="page-header">
-                <HeaderContainer />
-                <MenuContainer />
-              </div>
-
+        {
+          this.props.location.pathname === "/login" ?
+            <div>
+              {this.props.children}
             </div>
-          </div>
-        </div>
-        {this.props.children}
+            :
+            <div>
+              <div className="page-wrapper">
+                <div className="page-wrapper-row">
+                  <div className="page-wrapper-top">
+                    <div className="page-header">
+                      <HeaderContainer />
+                      <MenuContainer />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {this.props.children }
+            </div>
+        }
+
       </div>
     );
   }
