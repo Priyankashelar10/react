@@ -1,6 +1,7 @@
 import React, {PropTypes} from 'react';
 import HeaderContainer from './common/header.container';
 import MenuContainer from './common/menu.container';
+import FooterContainer from './common/footer.container';
 
 class MasterView extends React.Component {
   constructor(props) {
@@ -36,6 +37,7 @@ class MasterView extends React.Component {
                   </div>
                 </div>
               </div>
+              <FooterContainer />
             </div>
         }
       </div>
