@@ -18,7 +18,7 @@ const styles={
         height: 298
     },
 };
-class DashboardView extends Component {
+export class DashboardView extends Component {
     constructor(props) {
         super(props);
     }

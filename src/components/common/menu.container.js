@@ -15,6 +15,4 @@ class MenuContainer extends Component {
     }
 }
 
-
-
 export default MenuContainer
