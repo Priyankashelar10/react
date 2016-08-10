@@ -4,13 +4,15 @@ var app = express();
 
 // configure app
 app.engine('html', require('ejs').renderFile);
-app.use(express.static(__dirname + '/'));
+app.use(express.static(__dirname + '/src'));
+app.use('/dist', express.static(__dirname + '/../dist'));
+app.use('/node_modules', express.static(__dirname + '/../node_modules'));
 app.set('views', path.join(__dirname, '/'));
 app.set('view engine', 'ejs');
 
 // routes
 app.get('/*', function(req, res) {
-  res.render('index.html');
+  res.render('src/index.html');
 });
 
 // start

@@ -3,7 +3,7 @@ var ImageminPlugin = require('imagemin-webpack-plugin').default;
 var webpack = require('webpack');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var swPrecache = require('sw-precache');
-var TransferWebpackPlugin = require('transfer-webpack-plugin');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 function WebpackSwPrecachePlugin(options) {
 }
@@ -13,10 +13,9 @@ WebpackSwPrecachePlugin.prototype.apply = function (compiler) {
 
   var options = {
     staticFileGlobs: [
-      'prod-bundle.js',
-      'assets/**/*',
-      'assets/pages/css/*',
-      'favicon.ico'
+      'dist/bundle.js',
+      'dist/assets/**/*',
+      'dist/assets/pages/css/*'
     ],
     stripPrefix: 'dist',
   }
@@ -37,7 +36,7 @@ module.exports = {
   },
   output: {
     path: path.join(__dirname, 'dist'),
-    filename: '[name].js'
+    filename: 'bundle.js'
   },
   plugins: [
     new webpack.optimize.OccurenceOrderPlugin(),
@@ -46,8 +45,9 @@ module.exports = {
     new ImageminPlugin(),
     new webpack.ProvidePlugin({ Papa: 'papaparse' }),
     new webpack.DefinePlugin({'process.env.NODE_ENV': '"production"'}),
-    new TransferWebpackPlugin([
-      {from: 'assets',to: 'assets'},
+    new CopyWebpackPlugin([
+      {from: 'src/index.html',to: 'index.html'},
+      {from: 'src/assets',to: 'assets'}
     ]),
     new WebpackSwPrecachePlugin()
   ],

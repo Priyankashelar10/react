@@ -11,9 +11,8 @@ WebpackSwPrecachePlugin.prototype.apply = function (compiler) {
 
   var options = {
     staticFileGlobs: [
-        'dist/bundle.js',
-        'dist/local.js',
-        'assets/**/*',
+        'src/bundle.js',
+        'src/assets/**/*',
     ],
     stripPrefix: 'src',
   }
@@ -32,12 +31,11 @@ WebpackSwPrecachePlugin.prototype.apply = function (compiler) {
 module.exports = {
   devtool: 'cheap-module-eval-source-map',
   entry: {
-    bundle: './src/app.js',
-    local: './utils/local-utils.js'
+    bundle: './src/app.js'
   },
   output: {
-    path: path.join(__dirname, 'dist'),
-    filename: '[name].js'
+    path: 'src',
+    filename: 'bundle.js'
   },
   plugins: [
     new webpack.optimize.OccurenceOrderPlugin(),

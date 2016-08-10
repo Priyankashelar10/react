@@ -1,8 +1,8 @@
 import React, { Component, PropTypes } from 'react';
-import "../../../assets/global/plugins/bootstrap-daterangepicker/daterangepicker.min.css";
-import "../../../assets/global/plugins/morris/morris.css";
-import "../../../assets/global/plugins/fullcalendar/fullcalendar.min.css";
-import "../../../assets/global/plugins/jqvmap/jqvmap/jqvmap.css";
+import "../../assets/global/plugins/bootstrap-daterangepicker/daterangepicker.min.css";
+import "../../assets/global/plugins/morris/morris.css";
+import "../../assets/global/plugins/fullcalendar/fullcalendar.min.css";
+import "../../assets/global/plugins/jqvmap/jqvmap/jqvmap.css";
 
 const styles={
     salesStatistics:{

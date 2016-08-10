@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import "../../../assets/pages/css/login.min.css";
+import "../../assets/pages/css/login.min.css";
 
 class LoginView extends Component {
     constructor(props) {
