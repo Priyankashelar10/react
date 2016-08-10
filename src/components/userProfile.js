@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import "../../assets/pages/css/profile.min.css"; 
+import "../assets/pages/css/profile.min.css"; 
 
 class UserProfileView extends Component {
     constructor(props) {
