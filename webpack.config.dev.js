@@ -1,10 +1,38 @@
 var path = require('path');
 var webpack = require('webpack');
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var swPrecache = require('sw-precache');
+
+function WebpackSwPrecachePlugin(options) {
+}
+
+WebpackSwPrecachePlugin.prototype.apply = function (compiler) {
+  var rootDir = 'src';
+
+  var options = {
+    staticFileGlobs: [
+        'dist/bundle.js',
+        'dist/local.js',
+        'assets/**/*',
+    ],
+    stripPrefix: 'src',
+  }
+  compiler.plugin("after-emit", (compilation, callback) => {
+    swPrecache.write(path.join(rootDir, "sw-precache-config.js"), options, function (err) {
+      if (err) {
+        console.log("\n*** sw-precache file creation error: " + err);
+      } else {
+          console.log("\nCreated sw-precache file static/sw-precache-config.js");
+      }
+      callback(err);
+    })
+  });
+};
 
 module.exports = {
   devtool: 'cheap-module-eval-source-map',
   entry: {
-    bundle: './app.js',
+    bundle: './src/app.js',
     local: './utils/local-utils.js'
   },
   output: {
@@ -13,7 +41,8 @@ module.exports = {
   },
   plugins: [
     new webpack.optimize.OccurenceOrderPlugin(),
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    new WebpackSwPrecachePlugin(),
   ],
   module: {
     loaders: [

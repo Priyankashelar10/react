@@ -1,12 +1,13 @@
 {
-  "name": "base-forecasting",
+  "name": "react-app",
   "description": "",
   "main": "index.js",
   "scripts": {
     "build": "npm run clear-dist && webpack",
     "build-prod": "webpack --config webpack.config.prod.js",
     "clear-dist": "rm -Rf dist/",
-    "start": "npm run clear-dist && node nodemon.js"
+    "start": "npm run clear-dist && node nodemon.js",
+    "test": "mocha --reporter spec testSetup.js src/components/**/*.test.js "
   },
   "dependencies": {
     "ejs": "^2.4.2",
@@ -23,6 +24,7 @@
     "chalk": "^1.1.3",
     "css-loader": "^0.23.1",
     "dom-scroll-into-view": "^1.2.0",
+    "extract-text-webpack-plugin": "^1.0.1",
     "imagemin-webpack-plugin": "^1.0.7",
     "jsx-loader": "^0.13.2",
     "lodash": "^4.13.1",
@@ -36,8 +38,17 @@
     "redux-thunk": "^2.1.0",
     "sass-loader": "^3.2.0",
     "style-loader": "^0.13.1",
+    "sw-precache": "^3.2.0",
+    "sw-toolbox": "^3.2.1",
+    "transfer-webpack-plugin": "^0.1.4",
     "url-loader": "^0.5.7",
-    "webpack": "^1.13.0"
+    "webpack": "^1.13.0",
+    "file-loader": "^0.8.5",
+    "enzyme": "^2.3.0",
+    "expect": "^1.20.1",
+    "jsdom": "^9.2.1",
+    "mocha": "^2.5.3",
+    "react-addons-test-utils": "^15.1.0"
   },
   "license": "ISC"
 }
