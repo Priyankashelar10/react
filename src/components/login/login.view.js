@@ -11,7 +11,7 @@ class LoginView extends Component {
             <div className=" login">
                 <div className="logo">
                     <a href="index.html">
-                        <img src="../assets/pages/img/logo-big.png" alt="" /> </a>
+                        <img src="" alt="" /> </a>
                 </div>
                 <div className="content">
                     <div className="login-form" >
