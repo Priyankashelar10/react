@@ -18,7 +18,6 @@ class LoginContainer extends Component {
     login() {
         //localStorage.setItem('userInfo', "Sal");
         //location.href = "/dashboard";
-        debugger
         this.props.authenticate(this.state.userName,this.state.password);
     }
     handleUserNameChange(e) {

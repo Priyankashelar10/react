@@ -35,7 +35,9 @@ module.exports = {
   },
   output: {
     path: 'src',
-    filename: 'bundle.js'
+    filename: 'bundle.js',
+    hotUpdateChunkFilename: 'hot/[id].[hash].hot-update.js',
+    hotUpdateMainFilename: 'hot/[hash].hot-update.json'
   },
   plugins: [
     new webpack.optimize.OccurenceOrderPlugin(),
