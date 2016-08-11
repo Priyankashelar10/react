@@ -1,6 +1,6 @@
 var ApiUtils = {
     authenticate: function (userData) {
-        return new Promise((resolve, reject) => {fetch('http://localhost:5000/api/AccessToken', {
+        return new Promise((resolve, reject) => {fetch('http://localhost:57421/api/AccessToken', {
             method: 'post',
             headers: {
                 'Accept': 'application/json',

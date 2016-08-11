@@ -5,13 +5,13 @@ import * as types from './action-types';
 //   return {type: types.LOAD_AUTHORS_SUCCESS, authors};
 // }
 
-export function authenticate() {
+export function authenticate(username,password) {
   return dispatch => {
     //dispatch(beginAjaxCall());
-    return ApiUtils.authenticate({username:'admin',password:"password"}).then(token => {
+    return ApiUtils.authenticate({username:username,password:password}).then(token => {
         console.log('Login............ ',token);
+        localStorage.setItem('userInfo', token);
         location.href = "/dashboard";
-      //dispatch(loadAuthorsSuccess(authors));
     }).catch(error => {
       throw(error);
     });

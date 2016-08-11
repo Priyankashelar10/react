@@ -6,19 +6,26 @@ import { authenticate } from '../../actions/login-action';
 class LoginContainer extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+            userName:"",
+            password:""
+        }
         this.login = this.login.bind(this);
+        this.handleUserNameChange = this.handleUserNameChange.bind(this);
+        this.handlePasswordChange = this.handlePasswordChange.bind(this);
     }
 
     login() {
         //localStorage.setItem('userInfo', "Sal");
         //location.href = "/dashboard";
-        this.props.authenticate();
+        debugger
+        this.props.authenticate(this.state.userName,this.state.password);
     }
-    handleUserNameChange() {
-
+    handleUserNameChange(e) {
+        this.setState({userName:e.target.value});
     }
-    handlePasswordChange() {
-
+    handlePasswordChange(e) {
+        this.setState({password:e.target.value});
     }
     render() {
         return (
@@ -39,8 +46,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        authenticate: () => {
-            dispatch(authenticate());
+        authenticate: (username,password) => {
+            dispatch(authenticate(username,password));
         }
     }
 }
