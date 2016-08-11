@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import "../../../assets/pages/css/login.min.css";
+import "../../assets/pages/css/login.min.css";
 
 class LoginView extends Component {
     constructor(props) {
@@ -11,7 +11,7 @@ class LoginView extends Component {
             <div className=" login">
                 <div className="logo">
                     <a href="index.html">
-                        <img src="../assets/pages/img/logo-big.png" alt="" /> </a>
+                        <img src="" alt="" /> </a>
                 </div>
                 <div className="content">
                     <div className="login-form" >
@@ -22,10 +22,10 @@ class LoginView extends Component {
                         </div>
                         <div className="form-group">
                             <label className="control-label visible-ie8 visible-ie9">Username</label>
-                            <input className="form-control form-control-solid placeholder-no-fix" type="text" autocomplete="off" placeholder="Username" name="username" /> </div>
+                            <input  onChange={this.props.handleUserNameChange} className="form-control form-control-solid placeholder-no-fix" type="text" autocomplete="off" placeholder="Username" name="username" /> </div>
                         <div className="form-group">
                             <label className="control-label visible-ie8 visible-ie9">Password</label>
-                            <input className="form-control form-control-solid placeholder-no-fix" type="password" autocomplete="off" placeholder="Password" name="password" /> </div>
+                            <input onChange={this.props.handlePasswordChange}  className="form-control form-control-solid placeholder-no-fix" type="password" autocomplete="off" placeholder="Password" name="password" /> </div>
                         <div className="form-actions">
                             <button onClick={this.props.login} className="btn green uppercase">Login</button>
                             <label className="rememberme check mt-checkbox mt-checkbox-outline">

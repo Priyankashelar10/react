@@ -11,9 +11,8 @@ WebpackSwPrecachePlugin.prototype.apply = function (compiler) {
 
   var options = {
     staticFileGlobs: [
-        'dist/bundle.js',
-        'dist/local.js',
-        'assets/**/*',
+        'src/bundle.js',
+        'src/assets/**/*',
     ],
     stripPrefix: 'src',
   }
@@ -32,12 +31,13 @@ WebpackSwPrecachePlugin.prototype.apply = function (compiler) {
 module.exports = {
   devtool: 'cheap-module-eval-source-map',
   entry: {
-    bundle: './src/app.js',
-    local: './utils/local-utils.js'
+    bundle: './src/app.js'
   },
   output: {
-    path: path.join(__dirname, 'dist'),
-    filename: '[name].js'
+    path: 'src',
+    filename: 'bundle.js',
+    hotUpdateChunkFilename: 'hot/[id].[hash].hot-update.js',
+    hotUpdateMainFilename: 'hot/[hash].hot-update.json'
   },
   plugins: [
     new webpack.optimize.OccurenceOrderPlugin(),
@@ -54,15 +54,15 @@ module.exports = {
       },
       {
         test: /\.woff(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'url?limit=20000000&mimetype=application/font-woff'
+        loader: 'url?limit=10000&mimetype=application/font-woff'
       },
       {
         test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'url?limit=20000000&mimetype=application/font-woff'
+        loader: 'url?limit=10000&mimetype=application/font-woff'
       },
       {
         test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'url?limit=20000000'
+        loader: 'url?limit=10000'
       },
       {
         test: /\.css$/,
@@ -74,15 +74,15 @@ module.exports = {
       },
       { 
         test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'url-loader?limit=20000000'
+        loader: 'url-loader?limit=10000'
       },
       { 
         test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'url-loader?limit=20000000'
+        loader: 'url-loader?limit=10000'
       },
       { 
         test: /\.png$/,
-        loader: 'url-loader?limit=20000000'
+        loader: 'url-loader?limit=1000'
       }
     ]
   }
